@@ -1,0 +1,44 @@
+{
+  "name": "iamunique",
+  "version": "1.0.0",
+  "description": "website that helps to make decisions based on personal priorities and conditions",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mard-one/iamunique.git"
+  },
+  "keywords": [
+    "website",
+    "make",
+    "decisions",
+    "based",
+    "personal",
+    "priorities",
+    "conditions"
+  ],
+  "author": "Mardon Mashrabov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mard-one/iamunique/issues"
+  },
+  "homepage": "https://github.com/mard-one/iamunique#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "2.8.4",
+    "ejs": "2.5.9",
+    "express": "4.16.3",
+    "mongoose": "^5.0.12"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.16.8",
+    "@types/cors": "2.8.4",
+    "@types/express": "^4.11.1",
+    "@types/express-handlebars": "0.0.30",
+    "@types/mongoose": "^5.0.7",
+    "@types/node": "^9.6.0"
+  }
+}
