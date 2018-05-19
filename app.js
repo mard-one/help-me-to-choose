@@ -8,7 +8,7 @@ var cors = require("cors");
 var path = require("path");
 // tslint:disable-next-line:no-var-requires
 var selectionAlgorithm = require("./src/js/selectionAlgorithm");
-mongoose.connect('mongodb://userhelper:userhelper@ds129540.mlab.com:29540/help-me-to-choose', function (err) {
+mongoose.connect(process.env.DATABASE, function (err) {
     if (err) {
         console.log('Could NOT connect to database: ', err);
     }

@@ -9,7 +9,7 @@ import * as path from 'path';
 import * as selectionAlgorithm from './src/js/selectionAlgorithm';
 
 mongoose.connect(
-  'mongodb://userhelper:userhelper@ds129540.mlab.com:29540/help-me-to-choose',
+  process.env.DATABASE,
   err => {
     if (err) {
       console.log('Could NOT connect to database: ', err);
