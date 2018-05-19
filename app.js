@@ -42,7 +42,7 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/client/dist'));
+app.use(express.static(__dirname + '/public/dist'));
 app.post('/dataProcess', function (req, res) {
     selectionAlgorithm(req.body, function callback(output) {
         var result = new ResultData({
