@@ -27,7 +27,6 @@ var selectionAlgorithm = function (inputData, outputFn) {
     }(Object.create(null)), []);
     // quicksort algorithm
     function quickSort(dataResult, left, right) {
-        var len = dataResult.length;
         var pivot, partitionIndex;
         if (left < right) {
             pivot = right;

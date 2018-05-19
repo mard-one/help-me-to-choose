@@ -43,7 +43,6 @@ const selectionAlgorithm = function(inputData: InputData[], outputFn: OutputData
 
   // quicksort algorithm
   function quickSort(dataResult: any, left: any, right: any) {
-    const len = dataResult.length;
     let pivot, partitionIndex;
     if (left < right) {
       pivot = right;
