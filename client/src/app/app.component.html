@@ -1,0 +1,118 @@
+<header id='particles-js'>
+  <div class="container">
+    <section>
+      <h1>
+        Set your own priorities and make
+        <strong>smart</strong> decisions
+      </h1>
+      <p>
+        If you are a person who does homework before making important decisions especially in a world where the data that you need
+        is based on others' conditions and variables, also when you have a lot of data that differs from site to site,
+        boy, you're in a right place!
+      </p>
+    </section>
+  </div>
+</header>
+
+<main class='container'>
+  <section class='data_priority'>
+    <div class="wrap">
+      <h3>Catigories</h3>
+      <h4>(Prioritize your categories/variables/conditions)</h4>
+      <div class="priority_input_list" #inputPriorityList>
+        <div class="priority_input_holder" data-index='1' #inputPriorityExample>
+          <input type="text" class='priority_input cleanup'>
+          <div class="button_wrap">
+            <button class="priority_up">&#9650;</button>
+            <button class="priority_down">&#9660;</button>
+          </div>
+          <button class='remove'>&times;</button>
+        </div>
+      </div>
+      <span class="input_adder">
+        <button (click)='addInput(inputPriorityList, inputPriorityExample)'>
+          add input
+        </button>
+      </span>
+    </div>
+  </section>
+
+  <section class='data_rank'>
+    <h3 *ngIf='priorityName'>{{priorityName}}</h3>
+    <h3 *ngIf='!priorityName'>Ranking list</h3>
+    <h4>(Rank items of the categories on your own or based on the data from the internet)</h4>
+    <div class="rank_input_list" data-related-priority="1" #inputRankList>
+      <div class="rank_input_holder" #inputRankExample>
+        <input class='rank_number_input' type="number">
+        <input class='rank_data_input cleanup' type="text">
+        <button class='remove'>&times;</button>
+      </div>
+      <div class="rank_input_holder">
+        <input class='rank_number_input' type="number">
+        <input class='rank_data_input cleanup' type="text">
+        <button class='remove'>&times;</button>
+      </div>
+      <div class="rank_input_holder">
+        <input class='rank_number_input' type="number">
+        <input class='rank_data_input cleanup' type="text">
+        <button class='remove'>&times;</button>
+      </div>
+      <div class="rank_input_holder">
+        <input class='rank_number_input' type="number">
+        <input class='rank_data_input cleanup' type="text">
+        <button class='remove'>&times;</button>
+      </div>
+      <div class="rank_input_holder">
+        <input class='rank_number_input' type="number">
+        <input class='rank_data_input cleanup' type="text">
+        <button class='remove'>&times;</button>
+      </div>
+      <div class="rank_input_holder">
+        <input class='rank_number_input' type="number">
+        <input class='rank_data_input cleanup' type="text">
+        <button class='remove'>&times;</button>
+      </div>
+    </div>
+    <span class="action_buttons">
+      <div class="group">
+        <button class="add_input" (click)='addInput(inputRankList, inputRankExample)'>
+          add input
+        </button>
+      </div>
+      <div class="group">
+        <button class='action_previous' (click)="previous()">
+          previous
+        </button>
+        <button class='action_next' (click)="next()">
+          next
+        </button>
+      </div>
+    </span>
+  </section>
+</main>
+
+
+<div class='data_result' *ngIf='resultList'>
+  <div class="wrap container">
+    <h1>Result</h1>
+    <br>
+    <div class="result" *ngFor='let result of resultList; let i = index'>
+      <div class="color" [ngClass]="{'first': i+1 === 1, 'second': i+1 === 2, 'third': i+1 === 3 , 'other': i+1 > 3}">
+        <h3>
+          {{i + 1}}
+        </h3>
+        <p>
+          {{result.name}}
+          <p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer>
+  <span>
+    Crafted with &#10084; by
+    <a href="#">Mardon</a>
+  </span>
+</footer>

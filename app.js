@@ -44,7 +44,7 @@ var ResultData = mongoose.model('ResultData', schema);
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + '/public/dist'));
+app.use(express.static(__dirname + '/client/dist'));
 app.post('/dataProcess', function (req, res) {
     selectionAlgorithm(req.body, function callback(output) {
         var result = new ResultData({
@@ -56,7 +56,7 @@ app.post('/dataProcess', function (req, res) {
     });
 });
 app.get('/', function (req, res) {
-    res.send(path.join(__dirname, 'public', 'dist', 'index.js'));
+    res.send(path.join(__dirname, 'client', 'dist', 'index.js'));
 });
 app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'), function (err) {
