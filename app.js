@@ -54,7 +54,7 @@ app.post('/dataProcess', function (req, res) {
     });
 });
 app.get('/', function (req, res) {
-    res.send(path.join(__dirname, 'public/dist/index.js'));
+    res.send(path.join(__dirname, 'public', 'dist', 'index.js'));
 });
 app.set('port', process.env.PORT || 8080);
 app.listen(app.get('port'), function (err) {
