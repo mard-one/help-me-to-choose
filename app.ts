@@ -4,20 +4,23 @@ const Schema = mongoose.Schema;
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import * as path from 'path';
+import * as dotenv from 'dotenv';
 
 // tslint:disable-next-line:no-var-requires
 import * as selectionAlgorithm from './src/js/selectionAlgorithm';
 
-mongoose.connect(
-  process.env.DATABASE,
-  err => {
-    if (err) {
-      console.log('Could NOT connect to database: ', err);
-    } else {
-      console.log('Connected to database');
-    }
+
+
+const app = express();
+dotenv.config();
+
+mongoose.connect(process.env.DATABASE, err => {
+  if (err) {
+    console.log('Could NOT connect to database: ', err);
+  } else {
+    console.log('Connected to database');
   }
-);
+});
 
 const schema = new Schema({
   rawData: [
@@ -42,8 +45,6 @@ const schema = new Schema({
 });
 
 const ResultData = mongoose.model('ResultData', schema);
-
-const app = express();
 
 app.use(cors());
 app.use(bodyParser.json());

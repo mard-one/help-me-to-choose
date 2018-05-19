@@ -6,8 +6,11 @@ var Schema = mongoose.Schema;
 var bodyParser = require("body-parser");
 var cors = require("cors");
 var path = require("path");
+var dotenv = require("dotenv");
 // tslint:disable-next-line:no-var-requires
 var selectionAlgorithm = require("./src/js/selectionAlgorithm");
+var app = express();
+dotenv.config();
 mongoose.connect(process.env.DATABASE, function (err) {
     if (err) {
         console.log('Could NOT connect to database: ', err);
@@ -38,7 +41,6 @@ var schema = new Schema({
     date: { type: Date, "default": Date.now }
 });
 var ResultData = mongoose.model('ResultData', schema);
-var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
